@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Vikram Kakkar
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!-- Applies to
+         com.appeaser.sublimenavigationviewlibrary.StateAwareTextView -->
+    <declare-styleable name="StateAwareTextView">
+        <!-- Used to provide a default text-appearance -->
+        <attr format="reference" name="saTextAppearance"/>
+        <attr name="android:textAppearance"/>
+    </declare-styleable>
+
+    <declare-styleable name="SublimeMenuItemState">
+        <!-- Affords similar functionality to @android:attr/state_checked -->
+        <attr name="state_item_checked" format="boolean" />
+    </declare-styleable>
+
+    <!-- Holds user-provided text appearance styles. -->
+    <attr name="snvItemTextAppearance" format="reference"/>
+    <attr name="snvHintTextAppearance" format="reference"/>
+    <attr name="snvSubheaderItemTextAppearance" format="reference"/>
+    <attr name="snvSubheaderHintTextAppearance" format="reference"/>
+    <attr name="snvBadgeTextAppearance" format="reference"/>
+
+    <!-- Used with TextWithBadge menu item to display a
+         ProgressBar when the badge value is provided dynamically. -->
+    <attr name="valueProvidedAsync" format="boolean"/>
+
+    <!-- Indicates whether the menu Group is collapsible.
+         If the menu Group is collapsible, a chevron is shown. -->
+    <attr name="collapsible" format="boolean"/>
+
+    <!-- Sets the initial state of a menu Group. -->
+    <attr name="collapsed" format="boolean"/>
+
+    <declare-styleable name="SublimeMenuGroup">
+        <attr name="android:id"/>
+        <attr name="android:checkableBehavior"/>
+        <attr name="android:visible"/>
+        <attr name="android:enabled"/>
+        <attr name="collapsed" />
+        <attr name="collapsible" />
+    </declare-styleable>
+
+    <!-- Base attributes that are available to all Item objects. -->
+    <declare-styleable name="SublimeMenuGenericItem">
+
+        <!-- The ID of the item. -->
+        <attr name="android:id" />
+
+        <!-- The title associated with the item. -->
+        <attr name="android:title"/>
+
+        <!-- The hint associated with the item. -->
+        <attr name="android:hint"/>
+
+        <!-- The icon associated with this item.  This icon will not always be shown, so
+             the title should be sufficient in describing this item. -->
+        <attr name="android:icon" />
+
+        <!-- Whether the item is capable of displaying a check mark. -->
+        <attr name="android:checkable"/>
+
+        <!-- Whether the item is checked.  Note that you must first have enabled checking with
+             the checkable attribute or else the check mark will not appear. -->
+        <attr name="android:checked" />
+
+        <!-- Whether the item is shown/visible. -->
+        <attr name="android:visible" />
+
+        <!-- Whether the item is enabled. -->
+        <attr name="android:enabled" />
+
+        <attr name="valueProvidedAsync" />
+
+        <attr name="badgeText" format="string" />
+
+        <attr name="showIconSpace" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="SnvScrimInsetsFrameLayout">
+        <attr format="color|reference" name="snvInsetForeground"/>
+    </declare-styleable>
+
+    <!-- Used for providing default style implementations.
+         For eg: itemBackground, itemTextColor etc. -->
+    <attr name="snvDefaultTheme" format="enum">
+        <enum name="light" value="0"/>
+        <enum name="dark" value="1"/>
+    </attr>
+
+    <!-- enum values for typeface style -->
+    <attr name="snvItemTypefaceStyle" format="enum">
+        <enum name="normal" value="0"/>
+        <enum name="bold" value="1"/>
+        <enum name="italic" value="2"/>
+        <enum name="bold_italic" value="3"/>
+    </attr>
+
+    <!-- enum values for typeface style -->
+    <attr name="snvHintTypefaceStyle" format="enum">
+        <enum name="normal" value="0"/>
+        <enum name="bold" value="1"/>
+        <enum name="italic" value="2"/>
+        <enum name="bold_italic" value="3"/>
+    </attr>
+
+    <!-- enum values for typeface style -->
+    <attr name="snvSubheaderItemTypefaceStyle" format="enum">
+        <enum name="normal" value="0"/>
+        <enum name="bold" value="1"/>
+        <enum name="italic" value="2"/>
+        <enum name="bold_italic" value="3"/>
+    </attr>
+
+    <!-- enum values for typeface style -->
+    <attr name="snvSubheaderHintTypefaceStyle" format="enum">
+        <enum name="normal" value="0"/>
+        <enum name="bold" value="1"/>
+        <enum name="italic" value="2"/>
+        <enum name="bold_italic" value="3"/>
+    </attr>
+
+    <!-- enum values for typeface style -->
+    <attr name="snvBadgeTypefaceStyle" format="enum">
+        <enum name="normal" value="0"/>
+        <enum name="bold" value="1"/>
+        <enum name="italic" value="2"/>
+        <enum name="bold_italic" value="3"/>
+    </attr>
+
+    <declare-styleable name="SublimeNavigationView">
+        <!-- Drawer background -->
+        <attr name="android:background"/>
+        <attr name="android:fitsSystemWindows"/>
+
+        <!-- Drawer's max-width -->
+        <attr name="android:maxWidth"/>
+
+        <!-- Drawer's elevation -->
+        <attr name="elevation"/>
+
+        <!-- Menu resource to inflate -->
+        <attr format="reference" name="snvMenu"/>
+
+        <!-- ColorStateList that handles DISABLED, CHECKED & DEFAULT
+             state colors. Used for tinting MenuItem's icon,
+             Checkbox, Switch, Chevron(in case of menu Group) -->
+        <attr format="color" name="snvItemIconTint"/>
+
+        <!-- ColorStateList that handles DISABLED, CHECKED & DEFAULT
+             state colors. -->
+        <attr format="color" name="snvItemTextColor"/>
+        <attr format="color" name="snvHintTextColor"/>
+        <attr format="color" name="snvSubheaderItemTextColor"/>
+        <attr format="color" name="snvSubheaderHintTextColor"/>
+        <attr format="color" name="snvBadgeTextColor"/>
+
+        <!-- Filename of Typeface stored in 'assets' folder -->
+        <attr format="string" name="snvItemTypefaceFilename"/>
+        <attr format="string" name="snvHintTypefaceFilename"/>
+        <attr format="string" name="snvSubheaderItemTypefaceFilename"/>
+        <attr format="string" name="snvSubheaderHintTypefaceFilename"/>
+        <attr format="string" name="snvBadgeTypefaceFilename"/>
+
+        <!-- Typeface style - NORMAL, BOLD, ITALIC, BOLD_ITALIC -->
+        <attr name="snvItemTypefaceStyle"/>
+        <attr name="snvHintTypefaceStyle"/>
+        <attr name="snvSubheaderItemTypefaceStyle"/>
+        <attr name="snvSubheaderHintTypefaceStyle"/>
+        <attr name="snvBadgeTypefaceStyle"/>
+
+        <!-- Background for individual MenuItem layout -->
+        <attr format="reference|color" name="snvItemBackground"/>
+
+        <!-- Layout resource ID for header -->
+        <attr format="reference" name="snvHeaderLayout"/>
+
+        <attr name="snvDefaultTheme"/>
+
+        <!-- Drawable used when a menu Group is (collapsible & currently collapsed). -->
+        <attr format="reference" name="snvGroupExpandDrawable"/>
+
+        <!-- Drawable used when a menu Group is (collapsible & currently expanded). -->
+        <attr format="reference" name="snvGroupCollapseDrawable"/>
+    </declare-styleable>
+
+</resources>

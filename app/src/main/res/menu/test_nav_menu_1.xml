@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Vikram Kakkar
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Text
+        android:id="@+id/text_item_1"
+        android:title="Independent item"
+        android:hint="(Optional) hint for this item"/>
+
+    <Checkbox
+        android:id="@+id/checkbox_item_1"
+        android:title="Checkbox item"
+        android:checkable="true" />
+
+    <TextWithBadge
+        android:id="@+id/text_with_badge_item_1"
+        android:title="Text with badge item"
+        app:badgeText="25" />
+
+    <Switch
+        android:id="@+id/switch_item_1"
+        android:title="Switch item"
+        android:checked="false"
+        android:checkable="true"/>
+
+    <Separator
+        android:id="@+id/separator_item_1" />
+
+    <Group
+        android:id="@+id/group_1"
+        app:collapsible="true"
+        app:collapsed="true"
+        android:checkableBehavior="single">
+
+        <GroupHeader
+            android:id="@+id/group_header_1"
+            android:title="Group (Checkable: exclusive)" />
+
+        <Text
+            android:id="@+id/text_item_3"
+            android:title="Group item" />
+
+        <Text
+            android:id="@+id/text_item_4"
+            android:title="Group item with hint"
+            android:hint="Hint for this item"
+            android:visible="false"/>
+
+        <Switch
+            android:id="@+id/switch_item_2"
+            android:title="Switch item in group"
+            android:checked="false"
+            android:checkable="true"/>
+
+        <Checkbox
+            android:id="@+id/checkbox_item_2"
+            android:title="Checkbox item in group"
+            android:checked="true"/>
+
+    </Group>
+
+    <Separator
+        android:id="@+id/separator_item_2" />
+
+    <Text
+        android:id="@+id/text_item_2"
+        android:title="Independent item with icon"
+        android:icon="@drawable/archive" />
+
+    <Text
+        android:id="@+id/text_item_5"
+        android:title="Indented item"
+        android:hint="Show icon space on-demand"
+        app:showIconSpace="true"/>
+
+    <Separator
+        android:id="@+id/separator_item_3" />
+
+    <Text
+        android:id="@+id/text_item_6"
+        android:title="Clickable"
+        android:hint="... but not checkable"
+        android:checkable="false"/>
+
+    <Text
+        android:id="@+id/text_item_7"
+        android:title="Long text is ellipsized: Lorem ipsum dolor sit amet, quis persecuti philosophia an vim, sed accusam deterruisset no"
+        android:hint="Lorem ipsum dolor sit amet, quis persecuti philosophia an vim, sed accusam deterruisset no"
+        android:checkable="false"/>
+
+    <Text
+        android:id="@+id/text_item_8"
+        android:title="Disabled item"
+        android:enabled="false" />
+
+    <Checkbox
+        android:id="@+id/checkbox_item_3"
+        android:title="Checked"
+        android:hint="... and disabled"
+        android:enabled="false"
+        android:checked="true" />
+
+    <Separator
+        android:id="@+id/separator_item_4" />
+
+</menu>
