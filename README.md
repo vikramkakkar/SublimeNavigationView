@@ -24,6 +24,13 @@ How the menu looks:
 
 Switching between menus:
 
+First Menu                 |  Second Menu
+:-------------------------:|:-------------------------:
+![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_first_menu.png?raw=true)  |  ![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_second_menu.png?raw=true)
+
+
+
+
 <p align="center">
     <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_first_menu.png?raw=true" width="384" height="383" />
     <em>>>></em>
