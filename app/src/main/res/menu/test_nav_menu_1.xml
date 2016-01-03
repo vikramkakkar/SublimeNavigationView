@@ -29,7 +29,7 @@
     <TextWithBadge
         android:id="@+id/text_with_badge_item_1"
         android:title="Text with badge item"
-        app:badgeText="25" />
+        app:badgeText="25"/>
 
     <Switch
         android:id="@+id/switch_item_1"

@@ -24,9 +24,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -38,10 +35,6 @@ import com.appeaser.sublimenavigationviewlibrary.OnNavigationMenuEventListener;
 import com.appeaser.sublimenavigationviewlibrary.SublimeBaseMenuItem;
 import com.appeaser.sublimenavigationviewlibrary.SublimeMenu;
 import com.appeaser.sublimenavigationviewlibrary.SublimeNavigationView;
-
-import java.lang.reflect.Type;
-import java.net.URI;
-import java.security.AccessControlException;
 
 /**
  * Sample usage
