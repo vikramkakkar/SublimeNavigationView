@@ -28,16 +28,11 @@ First Menu                 |  Second Menu
 :-------------------------:|:-------------------------:
 ![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_first_menu.png?raw=true)  |  ![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_second_menu.png?raw=true)
 
-
-
-
-<p align="center">
-    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_first_menu.png?raw=true" width="384" height="383" />
-    <em>>>></em>
-    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_second_menu.png?raw=true" width="384" height="383" />
-</p>
-
 `SublimeMenu` supports grouping of menu items. In addition to the standard features such as defining a `checkable` policy, ordering etc., `SublimeGroup` can be expanded/collapsed - on user input, through XML definition, or programmatically:
+
+First Menu                 |  Second Menu
+:-------------------------:|:-------------------------:
+![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_collapsed.png?raw=true)  |  ![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_expanded.png?raw=true)
 
 <p align="center">
     <span>
