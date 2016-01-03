@@ -1,6 +1,6 @@
 # SublimeNavigationView
 
-... is a complete rewrite of NavigationView (from Design Support library) that enables usage of `Checkboxes`, `Switches` & `Badges` in/as menu items. Menus are defined in good-old `XML`, and parsed using a custom `MenuInflater`. `SublimeNavigationView` works with `Parcelable` Menus which means that state retention is built-in. Moreover, it can support multiple menus while preserving their respective states. Groups added to the Menu have the added feature of being collapsible/expandable. Along with this, SublimeNavigationView allows a few options for custom styling. 
+... is a complete rewrite of NavigationView (from Design Support library) that enables usage of `Checkboxes`, `Switches` & `Badges` in/as menu items. Menus are defined in good-old `XML`, and parsed using a custom `MenuInflater`. `SublimeNavigationView` works with `Parcelable` menus which means that state retention is built-in. Moreover, it can support multiple menus while preserving their respective states. Groups added to the menu have the added feature of being collapsible/expandable. Along with this, SublimeNavigationView allows a few options for custom styling. 
 
 Walkthrough
 -----------
@@ -28,7 +28,7 @@ First Menu                 |  Second Menu
 :-------------------------:|:-------------------------:
 ![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_first_menu.png?raw=true)  |  ![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_second_menu.png?raw=true)
 
-`SublimeMenu` supports grouping of menu items. In addition to the standard features such as defining a `checkable` policy, ordering etc., `SublimeGroup` can be expanded/collapsed - on user input, through XML definition, or programmatically:
+`SublimeMenu` supports grouping of menu items. In addition to the standard features such as defining a `checkable` policy, ordering etc., a `SublimeGroup` can be expanded/collapsed - on user input, through XML definition, or programmatically:
 
 Collapsed                  |  Expanded
 :-------------------------:|:-------------------------:
@@ -93,7 +93,7 @@ This feature can be used if the `badgeText` is being retrieved through a network
     ((SublimeTextWithBadgeMenuItem)snv.getMenu().getMenuItem(R.id.text_with_badge_item_1))
                         .setBadgeText("25").setValueProvidedAsync(false);
 
-SublimeNavigationView also supports a few styling options. The sample application uses a custom typeface spicified in the view's xml definition:
+SublimeNavigationView also supports a few styling options. As an example, the sample application uses a custom typeface spicified in the view's xml definition:
 
     <com.appeaser.sublimenavigationviewlibrary.SublimeNavigationView
         ....
