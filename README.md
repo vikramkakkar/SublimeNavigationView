@@ -4,7 +4,7 @@
 
 Walkthrough
 -----------
-Following screenshots have been taken from the sample application: [<img src="http://developer.android.com/images/brand/en_generic_rgb_wo_45.png"/>][1]
+Screenshots have been taken from the sample application available here: [<img src="http://developer.android.com/images/brand/en_generic_rgb_wo_45.png"/>][1]
 
 <p align="center">
     <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/app_info.png?raw=true" width="428" height="829" />
