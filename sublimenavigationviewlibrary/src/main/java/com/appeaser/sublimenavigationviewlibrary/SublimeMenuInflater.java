@@ -80,6 +80,8 @@ public class SublimeMenuInflater {
 
     /**
      * Constructs a menu inflater.
+     *
+     * @param context Context of the calling entity.
      */
     public SublimeMenuInflater(Context context) {
         mContext = context;

@@ -24,7 +24,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 /**
- * Sub-classed TextView that responds to custom states & style attrs.
+ * Sub-classed TextView that responds to custom states &amp; style attrs.
  */
 public class StateAwareTextView extends TextView {
 

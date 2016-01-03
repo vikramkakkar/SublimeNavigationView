@@ -216,9 +216,19 @@ public class Sampler extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_rate_this_app) {
-
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=com.appeaser.sublimenavigationview")));
+            } catch (ActivityNotFoundException anfe1) {
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://market.android.com/details?id=com.appeaser.sublimenavigationview")));
+                } catch (ActivityNotFoundException anfe2) {
+                    Toast.makeText(this, "You need a browser app to view this link",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
             return true;
         } else if (id == R.id.action_github_link) {
             String data = "https://github.com/vikramkakkar/SublimeNavigationView";

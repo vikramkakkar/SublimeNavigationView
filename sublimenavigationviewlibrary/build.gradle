@@ -1,28 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+    }
+}
+
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 
-/*ext {
+ext {
     bintrayRepo = 'maven'
-    bintrayName = 'sublime-picker'
+    bintrayName = 'sublime-nav-view'
 
-    publishedGroupId = 'com.appeaser.sublimepickerlibrary'
-    libraryName = 'SublimePicker'
-    artifact = 'sublimepickerlibrary'
+    publishedGroupId = 'com.appeaser.sublimenavigationviewlibrary'
+    libraryName = 'SublimeNavigationView'
+    artifact = 'sublimenavigationviewlibrary'
 
-    libraryDescription = 'A material-styled android view that provisions picking of a date, time & recurrence option, all from a single user-interface.'
+    libraryDescription = 'SublimeNavigationView is a complete rewrite of NavigationView (from Design Support library) that enables usage of Checkboxes, Switches & Badges as menu items. Menus are defined in XML, and parsed using a custom MenuInflater. SublimeNavigationView works with Parcelable Menus which means that state retention is built-in. Moreover, it can support multiple menus while preserving their respective states. Groups added to the Menu have the added feature of being collapsible/expandable. Along with this, SublimeNavigationView allows a few options for custom styling.'
 
-    siteUrl = 'https://github.com/vikramkakkar/SublimePicker'
-    gitUrl = 'https://github.com/vikramkakkar/SublimePicker.git'
+    siteUrl = 'https://github.com/vikramkakkar/SublimeNavigationView'
+    gitUrl = 'https://github.com/vikramkakkar/SublimeNavigationView.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '0.0.1'
 
     developerId = 'vikramkakkar'
     developerName = 'Vikram Kakkar'
-    developerEmail = 'vikram.kakkar.85@gmail.com'
+    developerEmail = 'vikram.kakkar.01@gmail.com'
 
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
-}*/
+}
 
 android {
     compileSdkVersion 23
@@ -40,11 +51,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:support-annotations:23.1.1'
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

@@ -83,8 +83,6 @@ public class SublimeMenu implements Parcelable {
 
     /**
      * Called by menu to notify of close and selection changes.
-     *
-     * @hide
      */
     public interface Callback {
 
@@ -1034,7 +1032,7 @@ public class SublimeMenu implements Parcelable {
 
     /**
      * Called when an item is changed. Type of change is evaluated
-     * by comparing the 'old' position & the 'new' position of the item.
+     * by comparing the 'old' position &amp; the 'new' position of the item.
      *
      * @param itemId id of item that's been changed
      */
