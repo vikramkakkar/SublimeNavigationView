@@ -7,27 +7,34 @@ Walkthrough
 Following screenshots have been taken from the sample application: [<img src="http://developer.android.com/images/brand/en_generic_rgb_wo_45.png"/>][1]
 
 <p align="center">
-    <img src="https://github.com/vikramkakkar/SublimePicker/blob/master/img/app_info.png?raw=true" width="307" height="512" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/app_info.png?raw=true" width="428" height="829" />
 </p>
 
 How the menu looks:
 
 <p align="center">
-    <img src="https://github.com/vikramkakkar/SublimePicker/blob/master/img/first_menu.png?raw=true" width="307" height="512" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/first_menu.png?raw=true" width="307" height="512" />
 </p>
 
 `SublimeNavigationView` can work with any number of menus. As an example of this, the sample application shows how to handle two of them:
 
 <p align="center">
-    <img src="https://github.com/vikramkakkar/SublimePicker/blob/master/img/second_menu.png?raw=true" width="307" height="512" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/second_menu.png?raw=true" width="307" height="512" />
+</p>
+
+Switching between menus:
+
+<p align="center">
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_first_menu.png?raw=true" width="307" height="512" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_second_menu.png?raw=true" width="307" height="512" />
 </p>
 
 `SublimeMenu` supports grouping of menu items. In addition to the standard features such as defining a `checkable` policy, ordering etc., `SublimeGroup` can be expanded/collapsed - on user input, through XML definition, or programmatically:
 
 <p align="center">
     <span>
-        <img src="https://github.com/vikramkakkar/SublimePicker/blob/master/img/group_collpased.png?raw=true" width="307" height="512" />
-        <img src="https://github.com/vikramkakkar/SublimePicker/blob/master/img/group_expanded.png?raw=true" width="307" height="512" />
+        <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_collpased.png?raw=true" width="307" height="512" />
+        <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_expanded.png?raw=true" width="307" height="512" />
     </span>
 </p>
 
@@ -41,7 +48,7 @@ XML definitions are quite straight-forward. An example:
 This would translate to:
 
 <p align="center">
-    <img src="https://github.com/vikramkakkar/SublimePicker/blob/master/img/item_with_hint.png?raw=true" width="307" height="512" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/item_with_hint.png?raw=true" width="307" height="512" />
 </p>
 
 A `Text` item with an icon - and another, that shows icon space, but doesn't display an icon:
@@ -60,7 +67,7 @@ A `Text` item with an icon - and another, that shows icon space, but doesn't dis
 Output:
 
 <p align="center">
-    <img src="https://github.com/vikramkakkar/SublimePicker/blob/master/img/item_with_icon.png?raw=true" width="307" height="512" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/item_with_icon.png?raw=true" width="307" height="512" />
 </p>
 
 `TextWithBadge` menu items can be presented in two forms - initialized & uninitialized. In uninitialized form, the item will display an indeterminate `ProgressBar` in place of `badgeText`:
@@ -71,7 +78,7 @@ Output:
         app:valueProvidedAsync="true"/>
 
 <p align="center">
-    <img src="https://github.com/vikramkakkar/SublimePicker/blob/master/img/text_with_badge_uninitialized.png?raw=true" width="307" height="512" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/text_with_badge_uninitialized.png?raw=true" width="307" height="512" />
 </p>
 
 In initialized form, the item will have its `badgeText` set in XML:
@@ -82,7 +89,7 @@ In initialized form, the item will have its `badgeText` set in XML:
         app:badgeText="25"/>
 
 <p align="center">
-    <img src="https://github.com/vikramkakkar/SublimePicker/blob/master/img/text_with_badge_initialized.png?raw=true" width="307" height="512" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/text_with_badge_initialized.png?raw=true" width="307" height="512" />
 </p>
 
 This feature can be used if the `badgeText` is being retrieved through a network call, or if some computation needs to be performed before it can be displayed. Once the text is available, you can display it using:
