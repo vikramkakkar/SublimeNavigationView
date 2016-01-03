@@ -26,7 +26,7 @@ Switching between menus:
 
 <p align="center">
     <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_first_menu.png?raw=true" width="384" height="383" />
-    **>>>**
+    <em>>>></em>
     <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/switch_menus_second_menu.png?raw=true" width="384" height="383" />
 </p>
 
@@ -34,8 +34,8 @@ Switching between menus:
 
 <p align="center">
     <span>
-        <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_collapsed.png?raw=true" width="576" height="75" />
-        <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_expanded.png?raw=true" width="576" height="291" />
+        <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_collapsed.png?raw=true" width="384" height="50" />
+        <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_expanded.png?raw=true" width="384" height="194" />
     </span>
 </p>
 
