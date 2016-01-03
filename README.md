@@ -7,19 +7,19 @@ Walkthrough
 Screenshots have been taken from the sample application available here: [<img src="http://developer.android.com/images/brand/en_generic_rgb_wo_45.png"/>][1]
 
 <p align="center">
-    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/app_info.png?raw=true" width="428" height="829" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/app_info.png?raw=true" width="285" height="553" />
 </p>
 
 How the menu looks:
 
 <p align="center">
-    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/first_menu.png?raw=true" width="428" height="829" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/first_menu.png?raw=true" width="285" height="553" />
 </p>
 
 `SublimeNavigationView` can work with any number of menus. As an example of this, the sample application shows how to handle two of them:
 
 <p align="center">
-    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/second_menu.png?raw=true" width="428" height="829" />
+    <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/second_menu.png?raw=true" width="285" height="553" />
 </p>
 
 Switching between menus:
@@ -30,16 +30,9 @@ First Menu                 |  Second Menu
 
 `SublimeMenu` supports grouping of menu items. In addition to the standard features such as defining a `checkable` policy, ordering etc., `SublimeGroup` can be expanded/collapsed - on user input, through XML definition, or programmatically:
 
-First Menu                 |  Second Menu
+Collapsed                  |  Expanded
 :-------------------------:|:-------------------------:
 ![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_collapsed.png?raw=true)  |  ![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_expanded.png?raw=true)
-
-<p align="center">
-    <span>
-        <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_collapsed.png?raw=true" width="384" height="50" />
-        <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_expanded.png?raw=true" width="384" height="194" />
-    </span>
-</p>
 
 XML definitions are quite straight-forward. An example:
 
