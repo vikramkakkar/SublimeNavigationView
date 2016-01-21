@@ -1,3 +1,5 @@
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SublimeNavigationView-orange.svg?style=flat-square)](http://android-arsenal.com/details/1/3043)
+
 # SublimeNavigationView
 
 ... is a complete rewrite of NavigationView (from Design Support library) that enables usage of `Checkboxes`, `Switches` & `Badges` in/as menu items. Menus are defined in good-old `XML`, and parsed using a custom `MenuInflater`. `SublimeNavigationView` works with `Parcelable` menus which means that state retention is built-in. Moreover, it can support multiple menus while preserving their respective states. Groups added to the menu have the added feature of being collapsible/expandable. Along with this, SublimeNavigationView allows a few options for custom styling. 
