@@ -162,6 +162,9 @@ public abstract class SublimeBaseMenuItem implements Parcelable {
 
         if (mIntent != null) {
             try {
+                if (Config.DEBUG) {
+                    Log.d(TAG, "Context requested from parent menu");
+                }
                 mMenu.getContext().startActivity(mIntent);
                 return true;
             } catch (ActivityNotFoundException e) {
@@ -255,6 +258,9 @@ public abstract class SublimeBaseMenuItem implements Parcelable {
     }
 
     public SublimeBaseMenuItem setTitle(int title) {
+        if (Config.DEBUG) {
+            Log.d(TAG, "Context requested from parent menu");
+        }
         return setTitle(mMenu.getContext().getString(title));
     }
 
@@ -274,6 +280,9 @@ public abstract class SublimeBaseMenuItem implements Parcelable {
         }
 
         if (mIconResId != NO_ICON) {
+            if (Config.DEBUG) {
+                Log.d(TAG, "Context requested from parent menu");
+            }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 mIconDrawable = mMenu.getContext().getResources().getDrawable(mIconResId, mMenu.getContext().getTheme());
             } else {

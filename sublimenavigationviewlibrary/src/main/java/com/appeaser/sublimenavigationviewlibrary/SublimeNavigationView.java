@@ -361,7 +361,7 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
                     throw new RuntimeException("Passed menuResId was not valid");
                 }
 
-                mMenu = new SublimeMenu(getContext(), menuResId);
+                mMenu = new SublimeMenu(menuResId);
                 inflateMenu(menuResId);
             }
 
@@ -377,7 +377,7 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
             mPresenter = new SublimeMenuPresenter();
             applyThemer();
 
-            mMenu.setMenuPresenter(mPresenter);
+            mMenu.setMenuPresenter(getContext(), mPresenter);
             addView(mPresenter.getMenuView(this));
 
             if (a.hasValue(R.styleable.SublimeNavigationView_snvHeaderLayout)) {
@@ -406,7 +406,7 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
             return;
         }
 
-        mMenu = new SublimeMenu(getContext(), newMenuResId);
+        mMenu = new SublimeMenu(newMenuResId);
         inflateMenu(newMenuResId);
 
         mMenu.setCallback(new SublimeMenu.Callback() {
@@ -418,7 +418,7 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
             }
         });
 
-        mMenu.setMenuPresenter(mPresenter);
+        mMenu.setMenuPresenter(getContext(), mPresenter);
     }
 
     /**
@@ -446,7 +446,7 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
             }
         });
 
-        mMenu.setMenuPresenter(mPresenter);
+        mMenu.setMenuPresenter(getContext(), mPresenter);
     }
 
     /**
@@ -489,7 +489,7 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
                             .mEventListener.onNavigationMenuEvent(event, item);
                 }
             });
-            mMenu.setMenuPresenter(mPresenter);
+            mMenu.setMenuPresenter(getContext(), mPresenter);
         }
     }
 
