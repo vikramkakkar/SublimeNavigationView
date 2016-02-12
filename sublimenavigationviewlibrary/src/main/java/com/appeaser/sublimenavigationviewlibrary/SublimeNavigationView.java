@@ -478,6 +478,7 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
 
         if (menuState != null) {
             // explicitly ask Bundle to use application's classloader
+            // See http://stackoverflow.com/q/13421582
             menuState.setClassLoader(SublimeMenu.class.getClassLoader());
 
             if (menuState.containsKey(SS_MENU)) {
@@ -624,8 +625,12 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
      * Used internally to apply the currently set {@link SublimeThemer}.
      */
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @SuppressWarnings("deprecation")
     private void applyThemer() {
-        Log.i(TAG, "applyThemer()");
+        if (Config.DEBUG) {
+            Log.i(TAG, "applyThemer()");
+        }
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             setBackground(mThemer.getDrawerBackground());
         } else {

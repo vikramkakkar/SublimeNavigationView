@@ -10,14 +10,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="211d4b2b-d6b1-49af-bb16-770f9df980f4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeMenu.java" afterPath="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeMenu.java" />
+    <list default="true" id="211d4b2b-d6b1-49af-bb16-770f9df980f4" name="Default" comment="add Menu items positionally">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeNavigationView.java" afterPath="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeNavigationView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/design_23_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_23_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_23_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_23_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_23_1_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SublimeNavigationView.iws" />
@@ -82,8 +76,8 @@
       <file leaf-file-name="SublimeNavigationView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeNavigationView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0357143">
-              <caret line="481" column="0" selection-start-line="481" selection-start-column="0" selection-end-line="481" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5604396">
+              <caret line="635" column="16" selection-start-line="635" selection-start-column="16" selection-end-line="635" selection-end-column="16" />
               <folding>
                 <element signature="e#1962#1963#0" expanded="true" />
                 <element signature="e#1997#1998#0" expanded="true" />
@@ -91,8 +85,9 @@
                 <element signature="e#18235#18236#0" expanded="true" />
                 <element signature="e#19572#19573#0" expanded="true" />
                 <element signature="e#19621#19622#0" expanded="true" />
-                <element signature="e#26571#26572#0" expanded="true" />
-                <element signature="e#26612#26613#0" expanded="true" />
+                <element signature="e#25095#25127#0" expanded="true" />
+                <element signature="e#26706#26707#0" expanded="true" />
+                <element signature="e#26747#26748#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2715,7 +2710,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455176726467</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add Menu items positionally">
+      <created>1455311673128</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1455311673128</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2767,7 +2768,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed null lists issue when unparcelling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed null lists issue when unparcelling" />
+    <MESSAGE value="add Menu items positionally" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Menu items positionally" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3150,8 +3152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeNavigationView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0357143">
-          <caret line="481" column="0" selection-start-line="481" selection-start-column="0" selection-end-line="481" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5604396">
+          <caret line="635" column="16" selection-start-line="635" selection-start-column="16" selection-end-line="635" selection-end-column="16" />
           <folding>
             <element signature="e#1962#1963#0" expanded="true" />
             <element signature="e#1997#1998#0" expanded="true" />
@@ -3159,8 +3161,9 @@
             <element signature="e#18235#18236#0" expanded="true" />
             <element signature="e#19572#19573#0" expanded="true" />
             <element signature="e#19621#19622#0" expanded="true" />
-            <element signature="e#26571#26572#0" expanded="true" />
-            <element signature="e#26612#26613#0" expanded="true" />
+            <element signature="e#25095#25127#0" expanded="true" />
+            <element signature="e#26706#26707#0" expanded="true" />
+            <element signature="e#26747#26748#0" expanded="true" />
           </folding>
         </state>
       </provider>
