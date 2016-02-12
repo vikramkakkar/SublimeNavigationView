@@ -427,25 +427,22 @@ public class SublimeMenu implements Parcelable {
      * @param groupId ID of the group to check for
      */
     private void checkExistenceOfGroup(int groupId) {
-        if (getGroup(groupId) == null) {
+        if (groupId != NO_GROUP_ID && getGroup(groupId) == null) {
             throw new RuntimeException("'groupId' passed was invalid: '" + groupId + "'. Items can only " +
                     "be added to existing Group(s)");
         }
     }
 
     /**
-     * This check is performed before adding an item to this menu.
-     * If the item indicates its membership to a {@link SublimeGroup}
-     * (by supplying a 'groupID'), this check confirms that such a
-     * group does exist. Throws {@link RuntimeException} if a group
-     * with ID == 'groupId' is not found.
+     * This check is performed before adding an item to this menu using a pivot Group.
+     * The method confirms that the group exists && contains at least 1 item.
+     * Throws {@link RuntimeException} if a group
+     * with ID == 'groupId' is not found || if the group is currently empty.
      *
      * @param groupId ID of the group to check for
      */
     private void checkExistenceOfGroupWithItems(int groupId) {
-        SublimeGroup group = getGroup(groupId);
-
-        if (group == null || getItemsForGroup(groupId).isEmpty()) {
+        if (getGroup(groupId) == null || getItemsForGroup(groupId).isEmpty()) {
             throw new RuntimeException("'groupId' passed was invalid: '" + groupId + "'. To use a " +
                     "group as a pivot, it should contain at least one item.");
         }
