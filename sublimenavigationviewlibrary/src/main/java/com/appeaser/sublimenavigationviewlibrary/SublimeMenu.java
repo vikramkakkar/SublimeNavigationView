@@ -35,6 +35,10 @@ import java.util.List;
 public class SublimeMenu implements Parcelable {
     private static final String TAG = SublimeMenu.class.getSimpleName();
 
+    public enum PivotType { GROUP, ITEM }
+
+    public enum Positioned { BEFORE, AFTER }
+
     public static final int NO_GROUP_ID = -1;
     public static final int NO_ITEM_ID = -1;
 
@@ -65,12 +69,6 @@ public class SublimeMenu implements Parcelable {
      * Contains all of the groups for this menu
      */
     private ArrayList<SublimeGroup> mGroups = new ArrayList<>();
-
-    /**
-     * Contains only the items that are currently visible.  This will be created/refreshed from
-     * {@link #getVisibleItems()}
-     */
-    private ArrayList<SublimeBaseMenuItem> mVisibleItems = new ArrayList<>();
 
     // We only require _one_ presenter
     private SublimeMenuPresenter mPresenter;
@@ -242,8 +240,6 @@ public class SublimeMenu implements Parcelable {
         return item;
     }
 
-    public enum Positioned {BEFORE, AFTER}
-
     /**
      * Adds an item to the menu and positions it using the given `pivot`.
      *
@@ -275,30 +271,20 @@ public class SublimeMenu implements Parcelable {
             } else { // group exists, but does not contain any items at the moment
                 // try to use the `pivot` to place the first group item
                 if (positioned == Positioned.BEFORE) {
-                    if (pivot.getGroupId() == NO_GROUP_ID
-                            || pivot.getItemType()
-                            == SublimeBaseMenuItem.ItemType.GROUP_HEADER) {
+                    if (pivot.getGroupId() == NO_GROUP_ID) {
                         // `pivot` is not part of a Group
-                        // - or -
-                        // `pivot` is a GROUP_HEADER
                         mItems.add(pivotIndex, newItem);
-                    } else {
-                        // we could not position the item as per the
-                        // requirements - add the item at the very end
-                        mItems.add(newItem);
+                    } else { // `pivot` belongs to a Group
+                        // find the group's first item's index
+                        mItems.add(findGroupIndex(pivot.getGroupId()), newItem);
                     }
                 } else if (positioned == Positioned.AFTER) {
-                    if (pivot.getGroupId() == NO_GROUP_ID
-                            || pivotIndex
-                            == findLastGroupIndex(newItemGroupId)) {
+                    if (pivot.getGroupId() == NO_GROUP_ID) {
                         // `pivot` is not part of a Group
-                        // - or -
-                        // `pivot` is the very last item in a Group
                         mItems.add(pivotIndex + 1, newItem);
-                    } else {
-                        // we could not position the item as per the
-                        // requirements - add the item at the very end
-                        mItems.add(newItem);
+                    } else { // `pivot` belongs to a Group
+                        // find the group's last item's index
+                        mItems.add(findLastGroupIndex(pivot.getGroupId()) + 1, newItem);
                     }
                 }
             }
@@ -309,30 +295,20 @@ public class SublimeMenu implements Parcelable {
                 if (lastGroupIndex == mItems.size()) { // no Group items found
                     // try to use the `pivot` to position the new item
                     if (positioned == Positioned.BEFORE) {
-                        if (pivot.getGroupId() == NO_GROUP_ID
-                                || pivotIndex == findGroupIndex(pivot.getGroupId())) {
+                        if (pivot.getGroupId() == NO_GROUP_ID) {
                             // `pivot` is not part of a Group
-                            // - or -
-                            // `pivot` is the very first item in a Group
                             mItems.add(pivotIndex, newItem);
-                        } else {
-                            // we could not position the item as per the
-                            // requirements - add the item at the very end
-                            //mItems.add(lastGroupIndex + 1, item);
-                            mItems.add(newItem);
+                        } else { // `pivot` belongs to a Group
+                            // find the group's first item's index
+                            mItems.add(findGroupIndex(pivot.getGroupId()), newItem);
                         }
                     } else if (positioned == Positioned.AFTER) {
-                        if (pivot.getGroupId() == NO_GROUP_ID
-                                || pivotIndex == findLastGroupIndex(pivot.getGroupId())) {
+                        if (pivot.getGroupId() == NO_GROUP_ID) {
                             // `pivot` is not part of a Group
-                            // - or -
-                            // `pivot` is the very last item in a Group
                             mItems.add(pivotIndex + 1, newItem);
-                        } else {
-                            // we could not position the item as per the
-                            // requirements - add the item at the very end
-                            //mItems.add(lastGroupIndex + 1, item);
-                            mItems.add(newItem);
+                        } else { // `pivot` belongs to a Group
+                            // find the group's last item's index
+                            mItems.add(findLastGroupIndex(pivot.getGroupId()), newItem);
                         }
                     }
                 } else {
@@ -361,28 +337,20 @@ public class SublimeMenu implements Parcelable {
             } else {
                 // `newItem` is independent - no Group membership
                 if (positioned == Positioned.BEFORE) {
-                    if (pivot.getGroupId() == NO_GROUP_ID
-                            || findGroupIndex(pivot.getGroupId()) == pivotIndex) {
+                    if (pivot.getGroupId() == NO_GROUP_ID) {
                         // `pivot` is not part of a Group
-                        // - or -
-                        // `pivot` is the very first item in a Group
                         mItems.add(pivotIndex, newItem);
-                    } else {
-                        // we could not position the item as per the
-                        // requirements - add the item at the very end
-                        mItems.add(newItem);
+                    } else { // `pivot` belongs to a Group
+                        // find the group's first item's index
+                        mItems.add(findGroupIndex(pivot.getGroupId()), newItem);
                     }
                 } else if (positioned == Positioned.AFTER) {
-                    if (pivot.getGroupId() == NO_GROUP_ID
-                            || pivotIndex == findLastGroupIndex(pivot.getGroupId())) {
+                    if (pivot.getGroupId() == NO_GROUP_ID) {
                         // `pivot` is not part of a Group
-                        // - or -
-                        // `pivot` is the very last item in a Group
                         mItems.add(pivotIndex + 1, newItem);
-                    } else {
-                        // we could not position the item as per the
-                        // requirements - add the item at the very end
-                        mItems.add(newItem);
+                    } else { // `pivot` belongs to a Group
+                        // find the group's last item's index
+                        mItems.add(findLastGroupIndex(pivot.getGroupId()) + 1, newItem);
                     }
                 }
             }
@@ -459,9 +427,27 @@ public class SublimeMenu implements Parcelable {
      * @param groupId ID of the group to check for
      */
     private void checkExistenceOfGroup(int groupId) {
-        if (groupId != NO_GROUP_ID && getGroup(groupId) == null) {
+        if (getGroup(groupId) == null) {
             throw new RuntimeException("'groupId' passed was invalid: '" + groupId + "'. Items can only " +
                     "be added to existing Group(s)");
+        }
+    }
+
+    /**
+     * This check is performed before adding an item to this menu.
+     * If the item indicates its membership to a {@link SublimeGroup}
+     * (by supplying a 'groupID'), this check confirms that such a
+     * group does exist. Throws {@link RuntimeException} if a group
+     * with ID == 'groupId' is not found.
+     *
+     * @param groupId ID of the group to check for
+     */
+    private void checkExistenceOfGroupWithItems(int groupId) {
+        SublimeGroup group = getGroup(groupId);
+
+        if (group == null || getItemsForGroup(groupId).isEmpty()) {
+            throw new RuntimeException("'groupId' passed was invalid: '" + groupId + "'. To use a " +
+                    "group as a pivot, it should contain at least one item.");
         }
     }
 
@@ -630,14 +616,25 @@ public class SublimeMenu implements Parcelable {
                 false /*valueProvidedAsync*/, null, false, false);
     }
 
-    public void addBefore(int pivotId, SublimeBaseMenuItem item) {
-        checkExistenceOfItem(pivotId);
-        addInternal(pivotId, Positioned.BEFORE, item);
+    public void addBefore(PivotType pivotType, int pivotId, SublimeBaseMenuItem item) {
+        addPositionally(pivotType, pivotId, item, Positioned.BEFORE);
     }
 
-    public void addAfter(int pivotId, SublimeBaseMenuItem item) {
-        checkExistenceOfItem(pivotId);
-        addInternal(pivotId, Positioned.AFTER, item);
+    public void addAfter(PivotType pivotType, int pivotId, SublimeBaseMenuItem item) {
+        addPositionally(pivotType, pivotId, item, Positioned.AFTER);
+    }
+
+    private void addPositionally(PivotType pivotType, int pivotId, SublimeBaseMenuItem item, Positioned positioned) {
+        int pivotItemId = pivotId;
+
+        if (pivotType == PivotType.GROUP) {
+            checkExistenceOfGroupWithItems(pivotId);
+            pivotItemId = getItemsForGroup(pivotId).get(0).getItemId();
+        } else {
+            checkExistenceOfItem(pivotId);
+        }
+
+        addInternal(pivotItemId, positioned, item);
     }
 
     public void removeItem(int id) {
@@ -728,7 +725,7 @@ public class SublimeMenu implements Parcelable {
         }
     }
 
-    protected List<SublimeBaseMenuItem> getItemsForGroup(int groupId) {
+    public List<SublimeBaseMenuItem> getItemsForGroup(int groupId) {
         ArrayList<SublimeBaseMenuItem> groupItems = new ArrayList<>();
 
         final int N = mItems.size();
@@ -867,17 +864,16 @@ public class SublimeMenu implements Parcelable {
     }
 
     public ArrayList<SublimeBaseMenuItem> getVisibleItems() {
-        // Refresh the visible items
-        mVisibleItems.clear();
+        ArrayList<SublimeBaseMenuItem> visibleItems = new ArrayList<>();
 
         final int itemsSize = mItems.size();
         SublimeBaseMenuItem item;
         for (int i = 0; i < itemsSize; i++) {
             item = mItems.get(i);
-            if (item.isVisible()) mVisibleItems.add(item);
+            if (item.isVisible()) visibleItems.add(item);
         }
 
-        return mVisibleItems;
+        return visibleItems;
     }
 
     //----------------------------------------------------------------//
@@ -997,9 +993,10 @@ public class SublimeMenu implements Parcelable {
 
         int i = 0;
         SublimeGroup currentGroup = null;
+        ArrayList<SublimeBaseMenuItem> visibleItems = getVisibleItems();
 
-        for (int totalSize = getVisibleItems().size(); i < totalSize; ++i) {
-            SublimeBaseMenuItem item = getVisibleItems().get(i);
+        for (int totalSize = visibleItems.size(); i < totalSize; ++i) {
+            SublimeBaseMenuItem item = visibleItems.get(i);
 
             if (currentGroup == null || currentGroup.getGroupId() != item.getGroupId()) {
                 currentGroup = getGroup(item.getGroupId());
@@ -1089,6 +1086,10 @@ public class SublimeMenu implements Parcelable {
      * @return SublimeGroup with id == groupId if found, 'null' otherwise
      */
     public SublimeGroup getGroup(int groupId) {
+        if (groupId == NO_GROUP_ID) {
+            return null;
+        }
+
         for (int i = 0; i < mGroups.size(); i++) {
             if (mGroups.get(i).getGroupId() == groupId) {
                 return mGroups.get(i);

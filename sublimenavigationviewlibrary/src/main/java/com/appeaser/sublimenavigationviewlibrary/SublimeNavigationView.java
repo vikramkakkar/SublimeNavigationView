@@ -476,8 +476,13 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
 
         Bundle menuState = state.getMenuState();
 
-        if (menuState != null && menuState.containsKey(SS_MENU)) {
-            mMenu = menuState.getParcelable(SS_MENU);
+        if (menuState != null) {
+            // explicitly ask Bundle to use application's classloader
+            menuState.setClassLoader(SublimeMenu.class.getClassLoader());
+
+            if (menuState.containsKey(SS_MENU)) {
+                mMenu = menuState.getParcelable(SS_MENU);
+            }
         }
 
         if (mMenu != null) {
