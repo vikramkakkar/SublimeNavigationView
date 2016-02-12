@@ -73,6 +73,10 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
     public SublimeNavigationView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
+        if (Config.DEBUG) {
+            Log.i(TAG, "Current library debug version: " + Config.DEBUG_VERSION);
+        }
+
         TypedArray a = getContext().obtainStyledAttributes(attrs,
                 R.styleable.SublimeNavigationView, defStyleAttr,
                 R.style.SnvSublimeNavigationView);

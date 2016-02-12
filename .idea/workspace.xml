@@ -11,7 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="211d4b2b-d6b1-49af-bb16-770f9df980f4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeMenu.java" afterPath="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/Config.java" afterPath="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/Config.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeNavigationView.java" afterPath="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeNavigationView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SublimeNavigationView.iws" />
@@ -63,21 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SublimeMenu.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SublimeMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6593407">
-              <caret line="441" column="50" selection-start-line="441" selection-start-column="50" selection-end-line="441" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="429" column="18" selection-start-line="429" selection-start-column="18" selection-end-line="429" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SublimeNavigationView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SublimeNavigationView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeNavigationView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="635" column="16" selection-start-line="635" selection-start-column="16" selection-end-line="635" selection-end-column="16" />
+              <caret line="76" column="79" selection-start-line="76" selection-start-column="79" selection-end-line="76" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -2435,8 +2438,9 @@
         <option value="$PROJECT_DIR$/sublimenavigationviewlibrary/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml" />
         <option value="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeBaseMenuItem.java" />
-        <option value="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeNavigationView.java" />
         <option value="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeMenu.java" />
+        <option value="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/Config.java" />
+        <option value="$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeNavigationView.java" />
       </list>
     </option>
   </component>
@@ -2482,9 +2486,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2505,7 +2507,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2712,7 +2716,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455312033624</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="confirm existence of group before adding to it">
+      <created>1455319760333</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1455319760333</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2766,7 +2776,8 @@
     <MESSAGE value="Fixed null lists issue when unparcelling" />
     <MESSAGE value="add Menu items positionally" />
     <MESSAGE value="explicitly set bundle's classloader when retrieving menu state" />
-    <option name="LAST_COMMIT_MESSAGE" value="explicitly set bundle's classloader when retrieving menu state" />
+    <MESSAGE value="confirm existence of group before adding to it" />
+    <option name="LAST_COMMIT_MESSAGE" value="confirm existence of group before adding to it" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3058,14 +3069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appeaser/sublimenavigationview/Sampler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="221" column="18" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28333333">
@@ -3103,15 +3106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37659034">
           <caret line="284" column="13" selection-start-line="284" selection-start-column="13" selection-end-line="284" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32846716">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3134,6 +3128,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46166667">
           <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/appeaser/sublimenavigationview/Sampler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="221" column="18" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="429" column="18" selection-start-line="429" selection-start-column="18" selection-end-line="429" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.302799">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -3141,15 +3158,7 @@
     <entry file="file://$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeNavigationView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="635" column="16" selection-start-line="635" selection-start-column="16" selection-end-line="635" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sublimenavigationviewlibrary/src/main/java/com/appeaser/sublimenavigationviewlibrary/SublimeMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6593407">
-          <caret line="441" column="50" selection-start-line="441" selection-start-column="50" selection-end-line="441" selection-end-column="50" />
+          <caret line="76" column="79" selection-start-line="76" selection-start-column="79" selection-end-line="76" selection-end-column="79" />
           <folding />
         </state>
       </provider>
