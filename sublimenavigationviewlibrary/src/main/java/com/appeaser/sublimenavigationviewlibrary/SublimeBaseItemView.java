@@ -25,6 +25,7 @@ import android.os.Build;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -174,12 +175,7 @@ public class SublimeBaseItemView extends LinearLayout {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void setItemBackground(Drawable itemBackground) {
-        if (isJBorHigher) {
-            setBackground(itemBackground);
-        } else {
-            setBackgroundDrawable(itemBackground);
-        }
-
+        SUtils.setBackground(this, itemBackground);
         refreshDrawableState();
     }
 

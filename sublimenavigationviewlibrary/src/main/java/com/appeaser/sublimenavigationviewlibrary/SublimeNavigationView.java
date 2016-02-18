@@ -635,12 +635,7 @@ public class SublimeNavigationView extends ScrimInsetsFrameLayout {
             Log.i(TAG, "applyThemer()");
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            setBackground(mThemer.getDrawerBackground());
-        } else {
-            setBackgroundDrawable(mThemer.getDrawerBackground());
-        }
-
+        SUtils.setBackground(this, mThemer.getDrawerBackground());
         ViewCompat.setElevation(this, mThemer.getElevation());
 
         // propagate themer to the presenter
