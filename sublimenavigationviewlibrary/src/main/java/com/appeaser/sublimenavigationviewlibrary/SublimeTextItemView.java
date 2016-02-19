@@ -27,7 +27,6 @@ import android.view.LayoutInflater;
  */
 public class SublimeTextItemView extends SublimeBaseItemView {
 
-
     public SublimeTextItemView(Context context) {
         this(context, null);
     }

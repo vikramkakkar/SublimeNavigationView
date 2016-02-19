@@ -273,6 +273,7 @@ public class SublimeMenuPresenter {
         @Override
         public void initialize(SublimeBaseMenuItem sublimeMenuItemDef, int boundPosition) {
             super.initialize(sublimeMenuItemDef, boundPosition);
+
             SublimeTextItemView itemTextView
                     = (SublimeTextItemView) itemView;
             itemTextView.initialize(sublimeMenuItemDef, mThemer);

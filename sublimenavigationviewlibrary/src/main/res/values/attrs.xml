@@ -197,6 +197,8 @@
 
         <!-- Drawable used when a menu Group is (collapsible & currently expanded). -->
         <attr format="reference" name="snvGroupCollapseDrawable"/>
+
+        <attr name="snvDividerColor" format="color|reference"/>
     </declare-styleable>
 
 </resources>

@@ -36,4 +36,6 @@
     <color name="snv_primary_text_disabled_material_light">#39000000</color>
     <color name="snv_primary_text_disabled_material_dark">#4Dffffff</color>
 
+    <color name="snv_default_divider_color">#1f000000</color>
+
 </resources>
