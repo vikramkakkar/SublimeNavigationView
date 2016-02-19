@@ -42,6 +42,14 @@ public class SublimeGroupHeaderMenuItem extends SublimeBaseMenuItem {
 
     @Override
     public boolean invoke() {
+        return invokeChevron();
+    }
+
+    public boolean invokeGroupHeader() {
+        return invoke(OnNavigationMenuEventListener.Event.GROUP_HEADER_CLICKED, this);
+    }
+
+    public boolean invokeChevron() {
         SublimeGroup group = getMenu().getGroup(getGroupId());
 
         if (group == null) return false;

@@ -19,5 +19,5 @@ package com.appeaser.sublimenavigationviewlibrary;
 public class Config {
     public static final boolean DEBUG = true;
 
-    public static final int DEBUG_VERSION = 2;
+    public static final int DEBUG_VERSION = 3;
 }

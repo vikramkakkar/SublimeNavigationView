@@ -53,6 +53,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Expand/Collapse"/>
 
 </merge>

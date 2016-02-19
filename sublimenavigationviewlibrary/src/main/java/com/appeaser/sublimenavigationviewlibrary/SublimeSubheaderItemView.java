@@ -172,4 +172,8 @@ public class SublimeSubheaderItemView extends SublimeBaseItemView {
         super.setEnabled(enabled);
         mExpandCollapse.setEnabled(enabled);
     }
+
+    public void setChevronClickListener(OnClickListener onClickListener) {
+        mExpandCollapse.setOnClickListener(onClickListener);
+    }
 }

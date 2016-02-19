@@ -101,6 +101,9 @@ public class Sampler extends AppCompatActivity {
                     case GROUP_COLLAPSED:
                         Log.i(TAG, "Group collapsed");
                         break;
+                    case GROUP_HEADER_CLICKED:
+                        Log.i(TAG, "Group header clicked");
+                        break;
                     default:
                         //CLICK
                         // Something like handleClick(menuItem);

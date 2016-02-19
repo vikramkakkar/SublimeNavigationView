@@ -77,6 +77,11 @@ public class SublimeMenu implements Parcelable {
 
     private ArrayList<SublimeBaseMenuItem> mAdapterData = new ArrayList<>();
 
+    // Controls whether a click on Group Header expands/collapses the group, or
+    // sends the `GROUP_HEADER_CLICKED` event. If set to `true`, the group only expands/collpases
+    // when the chevron is clicked.
+    private boolean mExpandCollapseGroupOnlyOnChevronClick;
+
     /**
      * Called by menu to notify of close and selection changes.
      */
@@ -860,6 +865,53 @@ public class SublimeMenu implements Parcelable {
         return !(item == null || !item.isEnabled()) && item.invoke();
     }
 
+    /**
+     * Special click handler for Group Header. Called when the
+     * Group Header (but not the chevron) is clicked
+     *
+     * @param item Menu item that was clicked
+     * @return `true` if the action was consumed, `false` otherwise.
+     */
+    public boolean performItemActionGroupHeader(SublimeBaseMenuItem item) {
+        if (mExpandCollapseGroupOnlyOnChevronClick) {
+            return !(item == null || !item.isEnabled())
+                    && (item instanceof SublimeGroupHeaderMenuItem)
+                    && ((SublimeGroupHeaderMenuItem)item).invokeGroupHeader();
+        }
+
+        return performItemAction(item);
+    }
+
+    /**
+     * Special click handler for Group Header. Called when the chevron is clicked
+     *
+     * @param item Menu item that was clicked
+     * @return `true` if the action was consumed, `false` otherwise.
+     */
+    public boolean performItemActionChevron(SublimeBaseMenuItem item) {
+        if (mExpandCollapseGroupOnlyOnChevronClick) {
+            return !(item == null || !item.isEnabled())
+                    && (item instanceof SublimeGroupHeaderMenuItem)
+                    && ((SublimeGroupHeaderMenuItem)item).invokeChevron();
+        }
+
+        return performItemAction(item);
+    }
+
+    /**
+     * Controls whether a click on Group Header expands/collapses the group, or
+     * sends the `GROUP_HEADER_CLICKED` event. If set to `true`, the group only
+     * expands/collpases when the chevron is clicked.
+     *
+     * @param restrict If set to `true`, the group only
+     *                 expands/collpases when the chevron is clicked.
+     *                 If set to `false`, clicking anywhere inside the
+     *                 Group Header expands/collapses the group.
+     */
+    public void expandCollapseGroupOnlyOnChevronClick(boolean restrict) {
+        mExpandCollapseGroupOnlyOnChevronClick = restrict;
+    }
+
     public ArrayList<SublimeBaseMenuItem> getVisibleItems() {
         ArrayList<SublimeBaseMenuItem> visibleItems = new ArrayList<>();
 
@@ -1305,6 +1357,7 @@ public class SublimeMenu implements Parcelable {
 
     private void readParcel(Parcel in) {
         mMenuResourceID = in.readInt();
+        mExpandCollapseGroupOnlyOnChevronClick = in.readByte() != 0;
 
         in.readTypedList(mItems, SublimeBaseMenuItem.CREATOR);
 
@@ -1327,6 +1380,7 @@ public class SublimeMenu implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mMenuResourceID);
+        dest.writeByte(mExpandCollapseGroupOnlyOnChevronClick ? (byte)1 : 0);
         dest.writeTypedList(mItems);
         dest.writeTypedList(mGroups);
     }

@@ -262,6 +262,21 @@ public class SublimeMenuPresenter {
                     .mMenu.getGroup(sublimeMenuItemDef.getGroupId());
             itemSubHeader.initialize(sublimeMenuItemDef, group,
                     mThemer);
+
+            itemSubHeader.setChevronClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mMenu.performItemActionChevron(mAdapter.getItem(getAdapterPosition()));
+                }
+            });
+
+            // override OnClickListener set in the parent
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mMenu.performItemActionGroupHeader(mAdapter.getItem(getAdapterPosition()));
+                }
+            });
         }
     }
 
