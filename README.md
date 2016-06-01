@@ -6,8 +6,10 @@
 
 Gradle dependency
 -----------------
-    
-    compile 'com.appeaser.sublimenavigationviewlibrary:sublimenavigationviewlibrary:0.0.1'
+
+```groovy    
+compile 'com.appeaser.sublimenavigationviewlibrary:sublimenavigationviewlibrary:0.0.1'
+```
 
 Walkthrough
 -----------
@@ -42,12 +44,12 @@ Collapsed                  |  Expanded
 ![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_collapsed.png?raw=true)  |  ![](https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/group_expanded.png?raw=true)
 
 XML definitions are quite straight-forward. An example:
-
-    <Text
-        android:id="@+id/text_item_1"
-        android:title="Independent item"
-        android:hint="(Optional) hint for this item"/>
-
+```xml
+<Text
+	android:id="@+id/text_item_1"
+	android:title="Independent item"
+	android:hint="(Optional) hint for this item"/>
+```
 This would translate to:
 
 <p align="center">
@@ -55,18 +57,18 @@ This would translate to:
 </p>
 
 A `Text` item with an icon - and another, that shows icon space, but doesn't display an icon:
+```xml
+<Text
+	android:id="@+id/text_item_2"
+	android:title="Independent item with icon"
+	android:icon="@drawable/archive" />
 
-    <Text
-        android:id="@+id/text_item_2"
-        android:title="Independent item with icon"
-        android:icon="@drawable/archive" />
-
-    <Text
-        android:id="@+id/text_item_5"
-        android:title="Indented item"
-        android:hint="Show icon space on-demand"
-        app:showIconSpace="true"/>
-
+<Text
+	android:id="@+id/text_item_5"
+	android:title="Indented item"
+	android:hint="Show icon space on-demand"
+	app:showIconSpace="true"/>
+```
 Output:
 
 <p align="center">
@@ -75,51 +77,54 @@ Output:
 
 `TextWithBadge` menu items can be presented in two forms - initialized & uninitialized. In uninitialized form, the item will display an indeterminate `ProgressBar` in place of `badgeText`:
 
-    <TextWithBadge
-        android:id="@+id/text_with_badge_item_1"
-        android:title="Text with badge item"
-        app:valueProvidedAsync="true"/>
+```xml
+<TextWithBadge
+	android:id="@+id/text_with_badge_item_1"
+	android:title="Text with badge item"
+	app:valueProvidedAsync="true"/>
+```
 
 <p align="center">
     <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/text_with_badge_uninitialized.png?raw=true" width="576" height="75" />
 </p>
 
 In initialized form, the item will have its `badgeText` set in XML:
-
-    <TextWithBadge
-        android:id="@+id/text_with_badge_item_1"
-        android:title="Text with badge item"
-        app:badgeText="25"/>
+```xml
+<TextWithBadge
+	android:id="@+id/text_with_badge_item_1"
+	android:title="Text with badge item"
+	app:badgeText="25"/>
+```
 
 <p align="center">
     <img src="https://github.com/vikramkakkar/SublimeNavigationView/blob/master/img/text_with_badge_initialized.png?raw=true" width="576" height="75" />
 </p>
 
 This feature can be used if the `badgeText` is being retrieved through a network call, or if some computation needs to be performed before it can be displayed. Once the text is available, you can display it using:
-
-    ((SublimeTextWithBadgeMenuItem)snv.getMenu().getMenuItem(R.id.text_with_badge_item_1))
-                        .setBadgeText("25").setValueProvidedAsync(false);
-
+```java
+((SublimeTextWithBadgeMenuItem)snv.getMenu().getMenuItem(R.id.text_with_badge_item_1))
+                .setBadgeText("25").setValueProvidedAsync(false);
+```
 SublimeNavigationView also supports a few styling options. As an example, the sample application uses a custom typeface spicified in the view's xml definition:
-
-    <com.appeaser.sublimenavigationviewlibrary.SublimeNavigationView
-        ....
-        ....
-        app:snvHeaderLayout="@layout/nav_header"
-        app:snvMenu="@menu/test_nav_menu_1"
-        app:snvItemTypefaceFilename="planer_bold_webfont.ttf"
-        app:snvHintTypefaceFilename="planer_reg_webfont.ttf"
-        app:snvSubheaderItemTypefaceFilename="planer_bold_webfont.ttf"/>
-
+```xml
+<com.appeaser.sublimenavigationviewlibrary.SublimeNavigationView
+	....
+	....
+	app:snvHeaderLayout="@layout/nav_header"
+	app:snvMenu="@menu/test_nav_menu_1"
+	app:snvItemTypefaceFilename="planer_bold_webfont.ttf"
+	app:snvHintTypefaceFilename="planer_reg_webfont.ttf"
+	app:snvSubheaderItemTypefaceFilename="planer_bold_webfont.ttf"/>
+```
 Styling info can also be set programmatically by providing a initialized `SublimeThemer`.
 
 There were some features that were left out on purpose. One of them was the option to define sub-menus. This feature is essential when used within the `ActionBar` design pattern, but its importance in a navigation view is lost on me.
 
 The `NavigationView` from design library adds separators automatically. SublimeNavigationView takes a different approach, and lets you decide where the separators should go. So, to create a divider, add a `Separator` menu item:
-
-    <Separator
-        android:id="@+id/separator_item_1" />
-
+```xml
+<Separator
+	android:id="@+id/separator_item_1" />
+```
 Since there are no space concerns, `orderInCategory` & `menuCategory` have also been left out.
 
 License
