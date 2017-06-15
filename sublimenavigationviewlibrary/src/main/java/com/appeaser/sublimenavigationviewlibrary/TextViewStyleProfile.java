@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.util.TypedValue;
 
@@ -146,7 +147,7 @@ public class TextViewStyleProfile {
     private void setDefaultItemTextColor() {
         TypedValue value = new TypedValue();
         if (mContext.getTheme().resolveAttribute(android.R.attr.textColorPrimary, value, true)) {
-            ColorStateList baseColor = mContext.getResources().getColorStateList(value.resourceId);
+            ColorStateList baseColor = ContextCompat.getColorStateList(mContext, value.resourceId);
             if (mContext.getTheme().resolveAttribute(R.attr.colorPrimary, value, true)) {
                 int colorPrimary = value.data;
                 int defaultColor = baseColor.getDefaultColor();
